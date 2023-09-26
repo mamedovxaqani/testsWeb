@@ -1,0 +1,3 @@
+let currentQuestion = {};
+
+export { currentQuestion };
