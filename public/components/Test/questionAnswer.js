@@ -23,6 +23,7 @@ const questionAnswer = (answers) => {
     if (event.target.tagName === "UL") {
       return;
     }
+
     event.target.classList.toggle("clicked-item");
   });
   return ulAnswer;

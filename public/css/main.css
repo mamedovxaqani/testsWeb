@@ -75,15 +75,10 @@ header {
   border: 2px solid green;
 }
 
-.list-group-item:active {
+/* .list-group-item:active {
   background-color: rgb(238, 69, 80);
   color: white;
-}
-
-.clicked-item {
-  background-color: rgb(238, 69, 80);
-  color: white;
-}
+} */
 
 .next-button {
   color: white;
@@ -123,6 +118,23 @@ header {
   font-weight: 700;
   font-size: 22px;
   width: 366px;
+  border: 1px solid;
+}
+
+.clicked-item {
+  border: 5px solid green !important;
+  position: relative;
+}
+
+.clicked-item::after {
+  position: absolute;
+  content: "\f00c";
+  font-family: "Font Awesome 6 Free";
+  color: green;
+  font-weight: 900;
+  right: 20px;
+  top: 30%;
+  bottom: 50%;
 }
 
 .footer {
