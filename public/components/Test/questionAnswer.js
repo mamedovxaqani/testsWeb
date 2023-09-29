@@ -13,7 +13,9 @@ const questionAnswer = (answers, correct_answer) => {
       "border",
       "rounded",
       "mt-2",
-      "py-4"
+      "py-4",
+      "animate__animated",
+      "animate__fadeInLeft"
     );
 
     li.addEventListener("click", (event) => {

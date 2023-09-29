@@ -1,5 +1,6 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./css/main.css";
+import "animate.css";
 
 import Header from "./components/Header/header.js";
 import Test from "./components/Test/Test";
