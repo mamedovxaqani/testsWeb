@@ -1,11 +1,11 @@
 import questionAnswer from "../Test/questionAnswer";
 
-const questionBlock = (answers) => {
+const questionBlock = (answers, correct_answer) => {
   const blockQuestion = document.createElement("div");
 
   blockQuestion.classList.add("block-question");
 
-  blockQuestion.append(questionAnswer(answers));
+  blockQuestion.append(questionAnswer(answers, correct_answer));
 
   return blockQuestion;
 };

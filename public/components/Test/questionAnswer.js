@@ -1,8 +1,7 @@
-import { answerQuestion } from "../../helpers/answersFunction";
+import { answersQuestion } from "../../helpers/answersFunction";
 
-const questionAnswer = (answers) => {
+const questionAnswer = (answers, correct_answer) => {
   let counter = 0;
-  let counterQuestion = 0;
   const ulAnswer = document.createElement("ul");
   ulAnswer.classList.add("list-group", "text-center");
   const liAnswer = answers.map((element) => {
@@ -20,13 +19,19 @@ const questionAnswer = (answers) => {
     li.addEventListener("click", (event) => {
       if (event.target.classList.contains("clicked-item") && counter === 1) {
         event.target.classList.remove("clicked-item");
+
         --counter;
         return;
       }
 
-      if (!event.target.classList.contains("clicked-item") && counter < 1) {
+      if (!event.target.classList.contains("clicked-item") && counter !== 1) {
         event.target.classList.add("clicked-item");
-        ++counter;
+        // if (event.target.innerHTML === correct_answer) {
+        answersQuestion(event.target.innerHTML, correct_answer);
+        // } else {
+        // }
+
+        counter++;
         return;
       }
 
@@ -36,7 +41,6 @@ const questionAnswer = (answers) => {
     });
 
     li.innerHTML = element;
-
     return li;
   });
 

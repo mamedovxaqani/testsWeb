@@ -1,6 +1,8 @@
 import Header from "../Header/header";
 import Test from "../Test/Test";
 import Footer from "./Footer";
+import { answers } from "../../data/answers";
+import { showAnswers } from "../Answers/showAnswers";
 
 const nextQuestionButton = (questions, root, qlength) => {
   const button = document.createElement("button");
@@ -8,9 +10,10 @@ const nextQuestionButton = (questions, root, qlength) => {
   button.classList.add("next-button");
 
   button.addEventListener("click", () => {
-    console.log(questions);
     if (!questions.length) {
-      alert("Вопросы закончились");
+      alert(`Вопросы закончились: ${answers.length}/${qlength}`);
+      root.innerHTML = "";
+      root.append(showAnswers(answers));
       return;
     }
 

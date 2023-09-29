@@ -7,7 +7,6 @@ import getQuestion from "./getQuestions";
 import nextQuestionButton from "../Footer/nextQuestionButton";
 
 import sideImage from "./sideImage";
-import generateCurrentQuestion from "../../helpers/generateCurrentQuestion";
 
 function testField(data) {
   console.log(data);
@@ -18,7 +17,10 @@ function testField(data) {
   const colTwo = Col("xl", 6);
   colOne.append(sideImage());
 
-  colTwo.append(questionTitle(data.title), questionBlock(data.answers));
+  colTwo.append(
+    questionTitle(data.title),
+    questionBlock(data.answers, data.correct_answer)
+  );
 
   row.append(colOne, colTwo);
   container.append(row);

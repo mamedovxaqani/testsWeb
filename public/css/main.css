@@ -80,7 +80,8 @@ header {
   color: white;
 } */
 
-.next-button {
+.next-button,
+.reload-button {
   color: white;
   background-image: linear-gradient(
     70deg,

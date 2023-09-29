@@ -1,7 +1,13 @@
+import Question from "../data/class/Question";
+
 function generateCurrentQuestion(data) {
   return data.map((element) => {
     element.incorrect_answers.push(element.correct_answer);
-    return { title: element.question, answers: element.incorrect_answers };
+    return new Question(
+      element.question,
+      element.incorrect_answers,
+      element.correct_answer
+    );
   });
 }
 
