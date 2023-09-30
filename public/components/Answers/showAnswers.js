@@ -1,9 +1,28 @@
-import { incorrect_answers } from "../../data/answers";
+import { default_answers } from "../../data/answers";
 import defContainer from "../def/defContainer";
 
 export function showAnswers(answers) {
+  const inc_answers = default_answers.map((element) => {
+    const tr = document.createElement("tr");
+    const td = document.createElement("td");
+    td.innerHTML = element;
+    tr.classList.add("text-danger");
+    tr.append(td);
+    return tr;
+  });
+
+  const corr_answer = answers.map((element) => {
+    const tr = document.createElement("tr");
+    tr.classList.add("text-success");
+    const td = document.createElement("td");
+    td.innerHTML = element;
+    tr.append(td);
+    return tr;
+  });
+
+  const allAnswers = [...corr_answer, ...inc_answers];
+
   const caption = document.createElement("caption");
-  const allAnswers = [...answers, ...incorrect_answers];
   caption.innerHTML = `Correct answers: ${answers.length}/${allAnswers.length}`;
   const button = document.createElement("button");
   button.innerHTML = "Reload page";
@@ -19,12 +38,10 @@ export function showAnswers(answers) {
   const tHead = document.createElement("thead");
   tHead.classList.add("p-2");
   const thOne = document.createElement("th");
-  const thTwo = document.createElement("th");
 
   thOne.append("answer");
-  thTwo.append("correct answer");
 
-  tHead.append(thOne, thTwo);
+  tHead.append(thOne);
 
   const tBody = document.createElement("tbody");
 
@@ -34,11 +51,9 @@ export function showAnswers(answers) {
       tr.classList.add("table-success");
     }
     const tdOne = document.createElement("td");
-    tdOne.append(element.answer);
-    const tdTwo = document.createElement("td");
-    tdTwo.append(element.correct_answer);
+    tdOne.append(element);
 
-    tr.append(tdOne, tdTwo);
+    tr.append(tdOne);
 
     return tr;
   });

@@ -1,4 +1,5 @@
 import { answersQuestion } from "../../helpers/answersFunction";
+import { correct_answers, incorrect_answers } from "../../data/answers";
 
 const questionAnswer = (answers, correct_answer) => {
   let counter = 0;
@@ -21,18 +22,14 @@ const questionAnswer = (answers, correct_answer) => {
     li.addEventListener("click", (event) => {
       if (event.target.classList.contains("clicked-item") && counter === 1) {
         event.target.classList.remove("clicked-item");
-
         --counter;
         return;
       }
 
       if (!event.target.classList.contains("clicked-item") && counter !== 1) {
         event.target.classList.add("clicked-item");
-        // if (event.target.innerHTML === correct_answer) {
-        answersQuestion(event.target.innerHTML, correct_answer);
-        // } else {
-        // }
 
+        answersQuestion(event.target.innerHTML, correct_answer);
         counter++;
         return;
       }
