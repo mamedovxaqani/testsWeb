@@ -1,15 +1,11 @@
-import { answers } from "../data/answers";
+import { correct_answers, incorrect_answers } from "../data/answers";
 function answersQuestion(answer, correct_answer) {
-  let thisAnswer = {
-    id: Math.floor(Math.random() * 100),
-    answer,
-    correct_answer,
-  };
+  const thisQuestion = { answer, correct_answer };
 
-  if (!answers.includes(thisAnswer.id)) {
-    answers.push(thisAnswer);
-  } else {
-    return;
+  if (answer === correct_answer && !correct_answers.includes(answer)) {
+    correct_answers.push(thisQuestion);
+  } else if (answer !== correct_answer) {
+    incorrect_answers.push(thisQuestion);
   }
 }
 

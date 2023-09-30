@@ -1,7 +1,7 @@
 import Header from "../Header/header";
 import Test from "../Test/Test";
 import Footer from "./Footer";
-import { answers } from "../../data/answers";
+import { correct_answers } from "../../data/answers";
 import { showAnswers } from "../Answers/showAnswers";
 
 const nextQuestionButton = (questions, root, qlength) => {
@@ -11,9 +11,9 @@ const nextQuestionButton = (questions, root, qlength) => {
 
   button.addEventListener("click", () => {
     if (!questions.length) {
-      alert(`Вопросы закончились: ${answers.length}/${qlength}`);
+      alert(`Вопросы закончились: ${correct_answers.length}/${qlength}`);
       root.innerHTML = "";
-      root.append(showAnswers(answers));
+      root.append(showAnswers(correct_answers));
       return;
     }
 
