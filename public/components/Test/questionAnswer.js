@@ -28,7 +28,6 @@ const questionAnswer = (answers, correct_answer) => {
 
       if (!event.target.classList.contains("clicked-item") && counter !== 1) {
         event.target.classList.add("clicked-item");
-
         answersQuestion(event.target.innerHTML, correct_answer);
         counter++;
         return;

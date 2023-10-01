@@ -7,15 +7,19 @@ import Col from "../def/Col";
 const Footer = (questions, root, qlength) => {
   const footer = document.createElement("footer");
   footer.classList.add("footer");
-  const colOne = Col("xl", 6);
+  // const colOne = Col("xl", 6);
   const colTwo = Col("xl", 6);
   const container = defContainer();
   const row = Row();
-  colTwo.classList.add("d-flex", "justify-content-end");
-  row.append(colOne, colTwo);
-  questionCount().forEach((element) => {
-    colOne.appendChild(element);
-  });
+  colTwo.classList.add(
+    "d-flex",
+    "justify-content-xl-end",
+    "justify-content-center"
+  );
+  row.append(colTwo);
+  // questionCount().forEach((element) => {
+  //   colOne.appendChild(element);
+  // });
 
   colTwo.append(nextQuestionButton(questions, root, qlength));
 
