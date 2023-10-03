@@ -246,7 +246,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \**************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _helpers_answersFunction__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../helpers/answersFunction */ \"./public/helpers/answersFunction.js\");\n/* harmony import */ var _data_answers__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../data/answers */ \"./public/data/answers.js\");\n\n\n\nconst questionAnswer = (answers, correct_answer) => {\n  let counter = 0;\n  const ulAnswer = document.createElement(\"ul\");\n  ulAnswer.classList.add(\"list-group\", \"text-center\");\n  const liAnswer = answers.map((element) => {\n    const li = document.createElement(\"li\");\n    li.classList.add(\"custom-li-item\");\n    li.classList.add(\n      \"list-group-item\",\n      \"text-bold\",\n      \"border\",\n      \"rounded\",\n      \"mt-2\",\n      \"py-4\",\n      \"animate__animated\",\n      \"animate__fadeInLeft\"\n    );\n\n    li.addEventListener(\"click\", (event) => {\n      if (event.target.classList.contains(\"clicked-item\") && counter === 1) {\n        event.target.classList.remove(\"clicked-item\");\n        --counter;\n        return;\n      }\n\n      if (!event.target.classList.contains(\"clicked-item\") && counter !== 1) {\n        event.target.classList.add(\"clicked-item\");\n        (0,_helpers_answersFunction__WEBPACK_IMPORTED_MODULE_0__.answersQuestion)(event.target.innerHTML, correct_answer);\n        counter++;\n        return;\n      }\n\n      if (!event.target.classList.contains(\"clicked-item\") && counter == 1) {\n        return;\n      }\n    });\n\n    li.innerHTML = element;\n    return li;\n  });\n\n  ulAnswer.append(...liAnswer);\n  return ulAnswer;\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (questionAnswer);\n\n\n//# sourceURL=webpack://testsweb/./public/components/Test/questionAnswer.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _helpers_addedAttibutes__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../helpers/addedAttibutes */ \"./public/helpers/addedAttibutes.js\");\n/* harmony import */ var _helpers_answersFunction__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../helpers/answersFunction */ \"./public/helpers/answersFunction.js\");\n/* harmony import */ var _helpers_converTitle__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../helpers/converTitle */ \"./public/helpers/converTitle.js\");\n/* harmony import */ var _helpers_convertAnswer__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../helpers/convertAnswer */ \"./public/helpers/convertAnswer.js\");\n\n\n\n\n\nconst questionAnswer = (answers, correct_answer) => {\n  let counter = 0;\n  const ulAnswer = document.createElement(\"ul\");\n  ulAnswer.classList.add(\"list-group\", \"text-center\");\n  const liAnswer = answers.map((element) => {\n    const li = document.createElement(\"li\");\n    li.classList.add(\"custom-li-item\");\n    li.classList.add(\n      \"list-group-item\",\n      \"text-bold\",\n      \"border\",\n      \"rounded\",\n      \"mt-2\",\n      \"py-4\",\n      \"animate__animated\",\n      \"animate__fadeInLeft\"\n    );\n\n    li.addEventListener(\"click\", (event) => {\n      if (event.target.classList.contains(\"clicked-item\") && counter === 1) {\n        event.target.classList.remove(\"clicked-item\");\n        --counter;\n        return;\n      }\n\n      if (!event.target.classList.contains(\"clicked-item\") && counter !== 1) {\n        event.target.classList.add(\"clicked-item\");\n        (0,_helpers_answersFunction__WEBPACK_IMPORTED_MODULE_1__.answersQuestion)(event.target.innerHTML, correct_answer);\n        counter++;\n        return;\n      }\n\n      if (!event.target.classList.contains(\"clicked-item\") && counter == 1) {\n        return;\n      }\n    });\n\n    li.innerHTML = (0,_helpers_convertAnswer__WEBPACK_IMPORTED_MODULE_3__[\"default\"])(element);\n    (0,_helpers_addedAttibutes__WEBPACK_IMPORTED_MODULE_0__[\"default\"])(li, element);\n    return li;\n  });\n\n  ulAnswer.append(...liAnswer);\n  return ulAnswer;\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (questionAnswer);\n\n\n//# sourceURL=webpack://testsweb/./public/components/Test/questionAnswer.js?");
 
 /***/ }),
 
@@ -316,7 +316,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \***************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nfunction questionTitle(title) {\n  const h2 = document.createElement(\"h2\");\n\n  h2.classList.add(\n    \"h3\",\n    \"fw-bold\",\n    \"block-title\",\n    \"animate__animated\",\n    \"animate__fadeInLeft\"\n  );\n  h2.innerHTML = title;\n\n  return h2;\n}\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (questionTitle);\n\n\n//# sourceURL=webpack://testsweb/./public/components/fields/questionTitle.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _helpers_converTitle__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../helpers/converTitle */ \"./public/helpers/converTitle.js\");\n/* harmony import */ var _helpers_addedAttibutes__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../helpers/addedAttibutes */ \"./public/helpers/addedAttibutes.js\");\n\n\n\nfunction questionTitle(title) {\n  const h2 = document.createElement(\"h2\");\n\n  // const newTitleArray = `Which Pokémon and it's evolutions were banned from appearing in a main role after the Episode 38 Incident?`;\n  const convertedTitle = (0,_helpers_converTitle__WEBPACK_IMPORTED_MODULE_0__[\"default\"])(title);\n\n  h2.classList.add(\n    \"h3\",\n    \"fw-bold\",\n    \"block-title\",\n    \"animate__animated\",\n    \"animate__fadeInLeft\"\n  );\n  h2.innerHTML = convertedTitle;\n  (0,_helpers_addedAttibutes__WEBPACK_IMPORTED_MODULE_1__[\"default\"])(h2, title);\n\n  return h2;\n}\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (questionTitle);\n\n\n//# sourceURL=webpack://testsweb/./public/components/fields/questionTitle.js?");
 
 /***/ }),
 
@@ -360,6 +360,16 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 
 /***/ }),
 
+/***/ "./public/helpers/addedAttibutes.js":
+/*!******************************************!*\
+  !*** ./public/helpers/addedAttibutes.js ***!
+  \******************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nfunction addedAttibutes(tag, title) {\n  tag.setAttribute(\"title\", title);\n  return tag;\n}\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (addedAttibutes);\n\n\n//# sourceURL=webpack://testsweb/./public/helpers/addedAttibutes.js?");
+
+/***/ }),
+
 /***/ "./public/helpers/answersFunction.js":
 /*!*******************************************!*\
   !*** ./public/helpers/answersFunction.js ***!
@@ -367,6 +377,26 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   answersQuestion: () => (/* binding */ answersQuestion)\n/* harmony export */ });\n/* harmony import */ var _var_answers__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./var_answers */ \"./public/helpers/var_answers.js\");\n\n\nfunction answersQuestion(answer, correct_answer) {\n  if (answer === correct_answer) {\n    (0,_var_answers__WEBPACK_IMPORTED_MODULE_0__.correct)(answer);\n  } else {\n    (0,_var_answers__WEBPACK_IMPORTED_MODULE_0__.incorrect)(correct_answer);\n  }\n}\n\n\n\n\n//# sourceURL=webpack://testsweb/./public/helpers/answersFunction.js?");
+
+/***/ }),
+
+/***/ "./public/helpers/converTitle.js":
+/*!***************************************!*\
+  !*** ./public/helpers/converTitle.js ***!
+  \***************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nfunction convertTitle(title) {\n  const titleArray = title.split(\" \");\n\n  if (titleArray.length > 12) {\n    titleArray.length = 12;\n    titleArray.push(\"...\");\n    const newTitle = titleArray.join(\" \");\n\n    return newTitle;\n  }\n  return title;\n}\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (convertTitle);\n\n\n//# sourceURL=webpack://testsweb/./public/helpers/converTitle.js?");
+
+/***/ }),
+
+/***/ "./public/helpers/convertAnswer.js":
+/*!*****************************************!*\
+  !*** ./public/helpers/convertAnswer.js ***!
+  \*****************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nfunction converAnswer(answer) {\n  const answerArray = answer.split(\" \");\n  if (answerArray.length > 3) {\n    answerArray.length = 3;\n    answerArray.push(\"...\");\n    return answerArray.join(\" \");\n  }\n  return answer;\n}\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (converAnswer);\n\n\n//# sourceURL=webpack://testsweb/./public/helpers/convertAnswer.js?");
 
 /***/ }),
 
