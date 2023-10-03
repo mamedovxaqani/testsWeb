@@ -1,5 +1,7 @@
+import addedAttibutes from "../../helpers/addedAttibutes";
 import { answersQuestion } from "../../helpers/answersFunction";
-import { correct_answers, incorrect_answers } from "../../data/answers";
+import convertTitle from "../../helpers/converTitle";
+import converAnswer from "../../helpers/convertAnswer";
 
 const questionAnswer = (answers, correct_answer) => {
   let counter = 0;
@@ -38,7 +40,8 @@ const questionAnswer = (answers, correct_answer) => {
       }
     });
 
-    li.innerHTML = element;
+    li.innerHTML = converAnswer(element);
+    addedAttibutes(li, element);
     return li;
   });
 
