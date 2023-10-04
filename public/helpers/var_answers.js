@@ -9,7 +9,15 @@ function correct(answer) {
 }
 
 function incorrect(correct_answer) {
-  default_answers.push(correct_answer);
+  if (default_answers.includes(correct_answer)) {
+    return;
+  }
+  if (
+    !default_answers.includes(correct_answer) &&
+    !correct_answers.includes(correct_answer)
+  ) {
+    default_answers.push(correct_answer);
+  }
 }
 
 export { correct, incorrect };

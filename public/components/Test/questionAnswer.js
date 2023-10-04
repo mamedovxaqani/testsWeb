@@ -23,16 +23,20 @@ const questionAnswer = (answers, correct_answer) => {
       "animate__fadeInLeft"
     );
 
+    let currentElement = null;
+
     li.addEventListener("click", (event) => {
+      currentElement = event.target.innerHTML;
       if (event.target.classList.contains("clicked-item") && counter === 1) {
         event.target.classList.remove("clicked-item");
+        currentElement = null;
         --counter;
         return;
       }
 
       if (!event.target.classList.contains("clicked-item") && counter !== 1) {
         event.target.classList.add("clicked-item");
-        answersQuestion(event.target.innerHTML, correct_answer);
+        answersQuestion(currentElement, correct_answer);
         counter++;
         return;
       }
