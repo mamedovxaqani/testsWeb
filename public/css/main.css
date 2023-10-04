@@ -164,4 +164,8 @@ header {
     margin-top: 10px;
     text-align: center;
   }
+
+  .col-xl-6:first-child {
+    display: none;
+  }
 }
