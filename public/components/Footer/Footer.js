@@ -1,5 +1,4 @@
 import nextQuestionButton from "./nextQuestionButton";
-import questionCount from "./questionCount";
 import defContainer from "../def/defContainer";
 import Row from "../def/Row";
 import Col from "../def/Col";
@@ -17,9 +16,6 @@ const Footer = (questions, root, qlength) => {
     "justify-content-center"
   );
   row.append(colTwo);
-  // questionCount().forEach((element) => {
-  //   colOne.appendChild(element);
-  // });
 
   colTwo.append(nextQuestionButton(questions, root, qlength));
 

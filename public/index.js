@@ -11,6 +11,7 @@ import generateCurrentQuestion from "./helpers/generateCurrentQuestion";
 document.addEventListener("DOMContentLoaded", () => {
   const question = getQuestion();
   question.then((data) => {
+    console.log(data);
     const questions = generateCurrentQuestion(data);
     const questionsLength = data.length;
     const root = document.querySelector("#root");

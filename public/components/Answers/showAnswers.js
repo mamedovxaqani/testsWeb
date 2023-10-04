@@ -2,7 +2,12 @@ import { default_answers } from "../../data/answers";
 import defContainer from "../def/defContainer";
 
 export function showAnswers(answers) {
-  const inc_answers = default_answers.map((element) => {
+  const def_answers = Array.from(new Set(default_answers));
+  console.log(def_answers);
+  const inc_answers = def_answers.map((element) => {
+    if (answers.includes(element)) {
+      return;
+    }
     const tr = document.createElement("tr");
     const td = document.createElement("td");
     td.innerHTML = element;
@@ -21,7 +26,7 @@ export function showAnswers(answers) {
   });
 
   const allAnswers = [...corr_answer, ...inc_answers];
-
+  console.log(allAnswers);
   const caption = document.createElement("caption");
   caption.innerHTML = `Correct answers: ${answers.length}/${allAnswers.length}`;
   const button = document.createElement("button");
@@ -47,10 +52,8 @@ export function showAnswers(answers) {
 
   const trAnswers = allAnswers.map((element) => {
     const tr = document.createElement("tr");
-    if (element.answer === element.correct_answer) {
-      tr.classList.add("table-success");
-    }
     const tdOne = document.createElement("td");
+    tdOne.classList.add("text-center");
     tdOne.append(element);
 
     tr.append(tdOne);
