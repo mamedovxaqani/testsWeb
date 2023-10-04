@@ -2,12 +2,14 @@ import addedAttibutes from "../../helpers/addedAttibutes";
 import { answersQuestion } from "../../helpers/answersFunction";
 import convertTitle from "../../helpers/converTitle";
 import converAnswer from "../../helpers/convertAnswer";
+import randomAnswerPlace from "../../helpers/randomAnswerPlace";
 
 const questionAnswer = (answers, correct_answer) => {
+  const randomAnswers = randomAnswerPlace(answers);
   let counter = 0;
   const ulAnswer = document.createElement("ul");
   ulAnswer.classList.add("list-group", "text-center");
-  const liAnswer = answers.map((element) => {
+  const liAnswer = randomAnswers.map((element) => {
     const li = document.createElement("li");
     li.classList.add("custom-li-item");
     li.classList.add(
